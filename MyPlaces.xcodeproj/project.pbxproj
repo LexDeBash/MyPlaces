@@ -12,6 +12,7 @@
 		A895AED021934CA8006ACC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A895AECF21934CA8006ACC1B /* Assets.xcassets */; };
 		A895AED321934CA8006ACC1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A895AED121934CA8006ACC1B /* LaunchScreen.storyboard */; };
 		A895AEDB21934D16006ACC1B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895AEDA21934D16006ACC1B /* MainViewController.swift */; };
+		A8DB6820219BDB0700CD36D5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DB681F219BDB0700CD36D5 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A895AED221934CA8006ACC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A895AED421934CA8006ACC1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A895AEDA21934D16006ACC1B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A8DB681F219BDB0700CD36D5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				A895AEC821934CA7006ACC1B /* AppDelegate.swift */,
 				A895AEDA21934D16006ACC1B /* MainViewController.swift */,
+				A8DB681F219BDB0700CD36D5 /* CustomTableViewCell.swift */,
 				A895AECC21934CA7006ACC1B /* Main.storyboard */,
 				A895AECF21934CA8006ACC1B /* Assets.xcassets */,
 				A895AED121934CA8006ACC1B /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8DB6820219BDB0700CD36D5 /* CustomTableViewCell.swift in Sources */,
 				A895AEC921934CA7006ACC1B /* AppDelegate.swift in Sources */,
 				A895AEDB21934D16006ACC1B /* MainViewController.swift in Sources */,
 			);
