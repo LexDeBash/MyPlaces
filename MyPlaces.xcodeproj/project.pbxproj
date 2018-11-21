@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A82E5BE521A5315800BD5158 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82E5BE421A5315800BD5158 /* NewPlaceViewController.swift */; };
 		A895AEC921934CA7006ACC1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A895AEC821934CA7006ACC1B /* AppDelegate.swift */; };
 		A895AECE21934CA7006ACC1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A895AECC21934CA7006ACC1B /* Main.storyboard */; };
 		A895AED021934CA8006ACC1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A895AECF21934CA8006ACC1B /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A82E5BE421A5315800BD5158 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		A895AEC521934CA7006ACC1B /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A895AEC821934CA7006ACC1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A895AECD21934CA7006ACC1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				A895AEC821934CA7006ACC1B /* AppDelegate.swift */,
 				A895AEDA21934D16006ACC1B /* MainViewController.swift */,
+				A82E5BE421A5315800BD5158 /* NewPlaceViewController.swift */,
 				A8DB6864219DA4BE00CD36D5 /* PlaceModel.swift */,
 				A8DB681F219BDB0700CD36D5 /* CustomTableViewCell.swift */,
 				A895AECC21934CA7006ACC1B /* Main.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				A8DB6820219BDB0700CD36D5 /* CustomTableViewCell.swift in Sources */,
 				A8DB6865219DA4BE00CD36D5 /* PlaceModel.swift in Sources */,
+				A82E5BE521A5315800BD5158 /* NewPlaceViewController.swift in Sources */,
 				A895AEC921934CA7006ACC1B /* AppDelegate.swift in Sources */,
 				A895AEDB21934D16006ACC1B /* MainViewController.swift in Sources */,
 			);
