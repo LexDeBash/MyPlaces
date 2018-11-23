@@ -10,6 +10,8 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
 
+    @IBOutlet var imageOfOlace: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,15 +61,25 @@ extension NewPlaceViewController: UITextFieldDelegate {
 }
 
 //MARK: Work with image
-extension NewPlaceViewController {
+extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
             present(imagePicker, animated: true)
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        imageOfOlace.image = info[.editedImage] as? UIImage
+        imageOfOlace.contentMode = .scaleAspectFill
+        imageOfOlace.clipsToBounds = true
+        dismiss(animated: true)
     }
 }
