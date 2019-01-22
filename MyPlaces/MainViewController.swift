@@ -12,6 +12,8 @@ import RealmSwift
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var reversedSortingButton: UIBarButtonItem!
     
     var places: Results<Place>!
 
@@ -75,4 +77,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
 
+    @IBAction func sortSelection(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            places = places.sorted(byKeyPath: "date")
+        } else {
+            places = places.sorted(byKeyPath: "name")
+        }
+        
+        tableView.reloadData()
+    }
+    
+    @IBAction func reversedSorting(_ sender: Any) {
+    }
+    
 }
