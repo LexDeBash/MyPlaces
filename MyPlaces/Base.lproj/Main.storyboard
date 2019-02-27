@@ -126,7 +126,7 @@
                                                     </constraints>
                                                     <state key="normal" image="Placeholder"/>
                                                     <connections>
-                                                        <segue destination="WN9-SV-9wF" kind="presentation" identifier="getAdress" id="4JG-tV-W2a"/>
+                                                        <segue destination="WN9-SV-9wF" kind="presentation" identifier="getAddress" id="4JG-tV-W2a"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -305,7 +305,7 @@
                         <viewLayoutGuide key="safeArea" id="iB2-cM-xtV"/>
                     </view>
                     <connections>
-                        <outlet property="adressLabel" destination="eTK-RN-sff" id="LvX-Ti-E9s"/>
+                        <outlet property="addressLabel" destination="eTK-RN-sff" id="LvX-Ti-E9s"/>
                         <outlet property="doneButton" destination="o8C-Mj-sap" id="bh2-dx-61a"/>
                         <outlet property="mapPinImage" destination="h2P-Wq-NMH" id="oRQ-qL-sUV"/>
                         <outlet property="mapView" destination="jiY-Td-5gs" id="BJo-j8-VMQ"/>
