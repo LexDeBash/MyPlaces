@@ -65,7 +65,7 @@ class MapManager {
         }
     }
     
-    // Проверка авторизации прилоежния для исопользования сервисов геолокации
+    // Проверка авторизации приложения для исопользования сервисов геолокации
     func checkLocationAuthorization(mapView: MKMapView, segueIdentifier: String) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
@@ -86,6 +86,8 @@ class MapManager {
             break
         case .authorizedAlways:
             break
+        @unknown default:
+            print("New case is available")
         }
     }
     
