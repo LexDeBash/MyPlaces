@@ -31,6 +31,7 @@ class Place: Object {
     
     convenience init(record: CKRecord) {
         self.init()
+        
         guard let possibleImage = record.value(forKey: "imageData") else { return }
         let imageAsset = possibleImage as! CKAsset
         guard let imageData = try? Data(contentsOf: imageAsset.fileURL!) else { return }
