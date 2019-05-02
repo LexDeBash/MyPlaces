@@ -97,25 +97,24 @@ class CloudManager {
         
         records.forEach { (record) in
             
-            let fetchRecordsOperation = CKFetchRecordsOperation(recordIDs: [record.recordID])
-            fetchRecordsOperation.desiredKeys = ["imageData"]
-            fetchRecordsOperation.queuePriority = .veryHigh
-            
-            fetchRecordsOperation.perRecordCompletionBlock = { record, _, error in
-                guard error == nil else { return }
-                guard let record = record else { return }
-                guard let possibleImage = record.value(forKey: "imageData") as? CKAsset else { return }
-                guard let imageData = try? Data(contentsOf: possibleImage.fileURL!) else { return }
+            if place.recordID == record.recordID.recordName {
+                let fetchRecordsOperation = CKFetchRecordsOperation(recordIDs: [record.recordID])
+                fetchRecordsOperation.desiredKeys = ["imageData"]
+                fetchRecordsOperation.queuePriority = .veryHigh
                 
-                DispatchQueue.main.async {
-                    try! realm.write {
-                        place.imageData = imageData
+                fetchRecordsOperation.perRecordCompletionBlock = { record, _, error in
+                    guard error == nil else { return }
+                    guard let record = record else { return }
+                    guard let possibleImage = record.value(forKey: "imageData") as? CKAsset else { return }
+                    guard let imageData = try? Data(contentsOf: possibleImage.fileURL!) else { return }
+                    
+                    DispatchQueue.main.async {
+                        closure(imageData)
                     }
-                    closure(imageData)
                 }
+                
+                privateCloudDatabase.add(fetchRecordsOperation)
             }
-            
-            privateCloudDatabase.add(fetchRecordsOperation)
         }
     }
     
