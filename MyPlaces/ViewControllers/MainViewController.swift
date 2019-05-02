@@ -81,8 +81,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let place = places[indexPath.row]
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, _) in
             
-            StorageManager.deleteObject(place)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.showAlert(title: "To delete a record?",
+                           message: "This record be deleted frpm all your devices", closure: {
+                            
+                            CloudManager.deleteRecord(recordID: place.recordID)
+                            StorageManager.deleteObject(place)
+                            tableView.deleteRows(at: [indexPath], with: .automatic)
+            })
         }
         
         return [deleteAction]
@@ -136,6 +141,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         tableView.reloadData()
+    }
+    
+    private func showAlert(title: String, message: String, closure: @escaping () -> ()) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Delete", style: .destructive) { (_) in
+            closure()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
     }
 }
 
